@@ -10,7 +10,7 @@
     "test": "node --test tests/dynamic-config.test.mjs tests/domain-behavior.test.mjs"
   },
   "dependencies": {
-    "@tanstack/react-query": "^5.85.0",
+    "@tanstack/react-query": "^5.102.2",
     "dexie": "^4.0.11",
     "motion": "^12.23.0",
     "react": "^19.1.1",
