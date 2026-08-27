@@ -1,0 +1,45 @@
+# Local secrets and credentials
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+*.jks
+*.keystore
+
+# Frontend dependencies and build output
+web/node_modules/
+web/dist/
+web/dist-preview/
+web/.preview-src/
+*.tsbuildinfo
+
+# Backend build output
+server/target/
+
+# Local tooling and editor state
+.idea/
+.vscode/
+.omx/
+.claude/settings.local.json
+.codex/
+.DS_Store
+Thumbs.db
+
+# Operator-specific production files kept outside the public source release
+/deploy/private/
+/deploy/*.conf
+/deploy/execute-release.sh
+/deploy/install-release.sh
+/deploy/predeploy-release.sh
+
+# Logs, databases, dumps, and backups
+*.log
+*.db
+*.sqlite
+*.dump
+*.sql.gz
+*.bak
+*.backup

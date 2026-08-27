@@ -1,0 +1,44 @@
+[Unit]
+Description=Baby Record application service
+After=network-online.target mariadb.service
+Wants=network-online.target mariadb.service
+
+[Service]
+Type=simple
+User=baby-record
+Group=baby-record
+WorkingDirectory=/opt/baby-record/current
+EnvironmentFile=/etc/baby-record/baby-record.env
+Environment=SERVER_ADDRESS=127.0.0.1
+Environment=SERVER_PORT=8080
+Environment="JAVA_TOOL_OPTIONS=-Xms64m -Xmx320m -XX:MaxMetaspaceSize=160m -Dfile.encoding=UTF-8 -Duser.timezone=Asia/Shanghai"
+ExecStart=/usr/bin/java -jar /opt/baby-record/current/baby-record-server.jar
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=20
+SuccessExitStatus=143
+UMask=0027
+MemoryMax=640M
+TasksMax=256
+
+NoNewPrivileges=true
+PrivateDevices=true
+PrivateTmp=true
+ProtectControlGroups=true
+ProtectHome=true
+ProtectHostname=true
+ProtectKernelLogs=true
+ProtectKernelModules=true
+ProtectKernelTunables=true
+ProtectProc=invisible
+ProtectSystem=strict
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+RestrictNamespaces=true
+RestrictRealtime=true
+RestrictSUIDSGID=true
+LockPersonality=true
+CapabilityBoundingSet=
+AmbientCapabilities=
+
+[Install]
+WantedBy=multi-user.target

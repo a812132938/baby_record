@@ -1,0 +1,41 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: baby-record-server
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 2
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+
+logging:
+  level:
+    com.babyrecord.mapper: INFO
+
+app:
+  ai:
+    enabled: ${AI_ENABLED:false}
+    deepseek:
+      api-key: ${DEEPSEEK_API_KEY:}
+      base-url: ${DEEPSEEK_BASE_URL:https://api.deepseek.com}
+      model: ${DEEPSEEK_MODEL:deepseek-v4-flash}
+      attempt-timeout-seconds: ${DEEPSEEK_ATTEMPT_TIMEOUT_SECONDS:90}
+      total-timeout-seconds: ${DEEPSEEK_TOTAL_TIMEOUT_SECONDS:90}
+    stream:
+      heartbeat-interval-ms: ${AI_STREAM_HEARTBEAT_INTERVAL_MS:10000}
+  realtime:
+    heartbeat-interval-ms: ${REALTIME_HEARTBEAT_INTERVAL_MS:20000}
+  auth:
+    secure-cookie: ${APP_SECURE_COOKIE}
+    session-days: ${APP_AUTH_SESSION_DAYS}
+    creation-recovery-minutes: ${APP_AUTH_CREATION_RECOVERY_MINUTES}
+  cors:
+    allowed-origin-patterns: ${APP_CORS_ALLOWED_ORIGIN_PATTERNS}

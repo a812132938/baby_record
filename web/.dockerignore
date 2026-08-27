@@ -1,0 +1,8 @@
+node_modules
+dist
+dist-preview
+.preview-src
+preview
+.env
+.env.*
+*.tsbuildinfo

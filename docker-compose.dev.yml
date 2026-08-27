@@ -1,0 +1,4 @@
+services:
+  server:
+    ports:
+      - "127.0.0.1:${SERVER_HOST_PORT:-8080}:8080"

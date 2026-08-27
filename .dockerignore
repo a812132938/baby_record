@@ -1,0 +1,12 @@
+.git
+.env
+.env.*
+!.env.example
+.omx
+**/node_modules
+**/dist
+**/dist-preview
+**/.preview-src
+**/target
+*.tsbuildinfo
+*.zip

@@ -1,0 +1,8 @@
+[mysqld]
+bind-address=127.0.0.1
+character-set-server=utf8mb4
+collation-server=utf8mb4_unicode_ci
+default-time-zone='+08:00'
+innodb-buffer-pool-size=128M
+max-connections=50
+max-allowed-packet=16M
